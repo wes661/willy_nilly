@@ -1,6 +1,6 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-
+var route = require('./routes/event-api-routes');
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 // Static directory
 app.use(express.static("public"));
 
-
+app.use('/', route);
 
 
 
