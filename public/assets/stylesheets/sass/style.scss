@@ -1,12 +1,96 @@
-@import 'reset';
+// ----------- Notes 
 
-$primaryColor: #eeffcc;
-$secondaryColor: rgb(128, 26, 0);
+
+
+// --------- Start SCSS and VARIABLES
+@import 'reset';
+$primaryColor: black;
+$secondaryColor: rgb(248, 250, 248);
 
 body {
-    background: $secondaryColor;
+    background: $primaryColor;
 }
 
-p {
-    color: $primaryColor;
+header {
+    h1 {
+        color: $secondaryColor;
+        font-size: 8em;
+        text-align: center;
+    }
 }
+.fullscreen-bg {    
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    #background-vid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// ----- PHONE STYLES - SM 
+@media only screen and (max-width: 599px) {
+    .fullscreen-bg {
+        background: url('../../images/event.jpg') center center / cover no-repeat;
+        #background-vid {
+            display: none;
+        }
+    }
+
+}
+
+
+// ----- TABLET STYLES - MD 
+@media only screen and (min-width: 600px) {
+    .fullscreen-bg {
+        #background-vid {
+            display: block;
+            height: 200%;
+            top: -50%;
+            width: 200%;
+            left: -50%;
+        }
+    }
+
+}
+
+
+// ----- LAPTOP STYLES - LG 
+@media only screen and (min-width: 900px) { 
+	
+}  
+
+
+
+// ----- LARGE DESKTOP STYLES - XL 
+@media only screen and (min-width: 1200px) { 
+
+}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
