@@ -1,0 +1,12 @@
+@import 'reset';
+
+$primaryColor: #eeffcc;
+$secondaryColor: rgb(128, 26, 0);
+
+body {
+    background: $secondaryColor;
+}
+
+p {
+    color: $primaryColor;
+}
