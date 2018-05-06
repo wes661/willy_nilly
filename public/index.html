@@ -14,13 +14,23 @@
 <header>
 <h1>{ Willy-Nilly }</h1>
 </header>
+<!-- start of div for video background -->
 <div class="fullscreen-bg">
     <video autoplay muted loop id="background-vid">
         <source src="assets/images/background-vid.mp4" type="video/mp4">
     </video>
 </div>
-
-<button type="button" class="btn btn-success findEvent">Find something to do!</button>
+<!-- start of div for submit button -->
+<div class="option-container">
+    <div class="cta">Lets Have Some Fun!</div>
+    <form class="form hidden">
+        <input type="search" id="location" name="location" placeholder="Where are you located?"/>
+    </form>
+    <form class="form hidden">
+        <input type="date" id="date" name="date"/>
+        <input type="submit" value="Submit" />
+    </form>
+</div>
 
 
 

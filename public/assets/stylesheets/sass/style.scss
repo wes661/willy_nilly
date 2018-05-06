@@ -4,18 +4,90 @@
 
 // --------- Start SCSS and VARIABLES
 @import 'reset';
-$primaryColor: black;
-$secondaryColor: rgb(248, 250, 248);
 
-body {
-    background: $primaryColor;
+$gray: #EEEEEE;
+$darkred: #330000;
+$sand: #CDB99C;
+$lightblue: #3399CC;
+$text: #212121;
+* {
+	box-sizing: border-box;
 }
-
+body {
+    display: flex;
+	justify-content: center;
+	flex-flow: row wrap;
+}
+.option-container {
+	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
+    width: 30rem;
+    margin-top: 100px;
+}	
+.cta {
+	background: $lightblue;
+	color: white;
+	cursor: pointer;
+	display: block;
+	font-size: 2rem;
+	line-height: 1;
+	padding: 1.75rem 1rem;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+}
+form {
+	background: $sand;
+	display: flex;
+	flex-flow: row nowrap;
+	padding: 1rem;
+	margin: 0;
+	input {
+		padding: .75rem;
+		margin: -5px;
+		&[type="search"] {
+			border: none;
+			font-size: 1rem;
+			flex: 1;
+			outline: $lightblue; 
+			&:focus {
+                outline: .10rem solid black;
+            }    
+        }
+        &[type="date"] {
+			border: none;
+			font-size: 1rem;
+			flex: 1;
+			outline: $lightblue; 
+			&:focus {
+                outline: .10rem solid black;
+            }    
+        }
+		&[type="submit"]{
+			background: linear-gradient(lighten($lightblue, 5%), lighten($lightblue, 0%));
+			cursor: pointer;
+			color: white;
+			border: none;
+			font-size: 1rem;
+			margin: 0 0 0 2;
+			padding: 0 4rem;
+            transition: all .25s ease-in-out;
+			&:hover{
+                background: linear-gradient(lighten($lightblue, 6%), lighten($lightblue, 1%))
+            }    
+        }        
+    }            
+}     
+.hidden{
+    display: none;
+}               
 header {
     h1 {
-        color: $secondaryColor;
+        color: $lightblue;
         font-size: 8em;
-        text-align: center;
+        margin: auto;
+        width: 100%;
+        padding: 10px;
+        text-shadow: 2px 2px 8px black;
     }
 }
 .fullscreen-bg {    
@@ -43,6 +115,16 @@ header {
             display: none;
         }
     }
+    .cta {
+        line-height: 1.4;
+        padding: 1.25rem 1rem;
+    }
+    input {
+        padding: 1rem !important;
+        margin:0 !important;
+        flex: 100%;
+       
+    }
 
 }
 
@@ -64,6 +146,7 @@ header {
 
 // ----- LAPTOP STYLES - LG 
 @media only screen and (min-width: 900px) { 
+    
 	
 }  
 
