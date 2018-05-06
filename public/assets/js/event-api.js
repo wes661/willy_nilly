@@ -1,4 +1,4 @@
-$(".search").on("click", function(event){
+$(".findEvent").on("click", function(event){
     console.log("running");
   
     $("#view").empty();
