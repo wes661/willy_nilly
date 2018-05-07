@@ -5,7 +5,7 @@ $(document).ready(function () {
         if ($("form").is(":visible")) {
             $(".cta").css('cursor', 'default');
         }
-        $("#email").focus();
+        $("#location").focus();
     });
 });
 
