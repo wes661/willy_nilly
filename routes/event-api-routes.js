@@ -7,10 +7,12 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 
 router.get('/api/events', function(req, res){
-var searchTerms = req.query.what;
-console.log(searchTerms);
+var what = req.query.what;
+var where = req.query.where;
+var when = req.query.when;
+console.log(what);
 var apikey = 'sKt9rvK6F3HzJdxb';
-request("http://api.eventful.com/json/events/search?app_key=" + apikey + "&keywords=" + searchTerms + "&page_size=50", function(err, request, data){
+request("http://api.eventful.com/json/events/search?app_key=" + apikey + "&keywords=" + what + "&page_size=50", function(err, request, data){
     var eventList =  JSON.parse(data).events.event
     var randomEvent = [];
     var events;
