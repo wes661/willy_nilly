@@ -5,12 +5,9 @@
   padding: 0;
 }
 
-body {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  background: #ededed;
-}
 
-input, button {
+
+.loginInput, button {
   border: none;
   outline: none;
   background: none;
@@ -48,7 +45,7 @@ $diffRatio: ($contW - $imgW) / $contW;
   background: #fff;
 }
 
-.form {
+.loginForm {
   position: relative;
   width: $formW;
   height: 100%;
@@ -72,7 +69,7 @@ $diffRatio: ($contW - $imgW) / $contW;
   }
 }
 
-button {
+.submit, .fb-btn {
   display: block;
   margin: 0 auto;
   width: $inputW;
@@ -230,7 +227,7 @@ label {
   }
 }
 
-input {
+.loginInput {
   display: block;
   width: 100%;
   margin-top: 5px;
