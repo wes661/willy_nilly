@@ -2,14 +2,29 @@
   
    
 
-$(".findEvent").on("click", function(event){
-    getEvents();
-});        
+$(".findEvent").click(function(){
+    var searchTerms = {
+        where : $("#location").val(),
+        when : $(".date").val()
+    }
+    // var where = $("#location").val();
+    // var when = $("#date").val();
+    // console.log(when);
+    // console.log(where);
+    
+       
+
+
+    // getEvents();
+
+
+  
+       
   
   
-function getEvents() {
+
     $("#view").empty();
-    $.get("/api/events", function(data){
+    $.get("/api/events", searchTerms, function(data){
         console.log(data);
         for(var x = 0; x < data.length; x++){
             var title = (data[x].title);
@@ -42,7 +57,8 @@ function getEvents() {
             "<br>");
         }
     })
-}
+
+})
 
 //   var oArgs = {
   
