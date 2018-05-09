@@ -62,7 +62,7 @@ form {
 	input {
 		padding: .75rem;
         margin: 0 2px 0 -4px;
-		&[type="search"] {
+		#location {
 			border: none;
 			font-size: 1rem;
             outline: $lightblue; 
