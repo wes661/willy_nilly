@@ -5,9 +5,10 @@
     <title>Willy-Nilly</title>
     <link rel="icon" type="image/png" href="assets/images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/css/style.css" />
+    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
     crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/stylesheets/css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
 
 </head>
@@ -27,7 +28,7 @@
     <div class="cta">Do Something Fun!</div>
     <form class="form hidden">
         <input type="search" id="location" name="location" placeholder="Where are you located?"/>
-        <select class="date" style="margin-left: 10px;">
+        <select class="date">
             <option value="Today">Today</option>
             <option value="This Week">This Week</option>
             <option value="Next Week">Next Week</option>
@@ -36,7 +37,7 @@
             <option value="All">All</option>
         </select>
         <input type="button" class="findEvent" value="Submit" />
-    </form> 
+    </form>
 </div>
 
 <div id="view"></div>
