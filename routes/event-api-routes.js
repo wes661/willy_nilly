@@ -14,7 +14,7 @@ var when = req.query.when;
 console.log(where);
 console.log(when);
 var apikey = 'sKt9rvK6F3HzJdxb';
-request("http://api.eventful.com/json/events/search?app_key=" + apikey + "&keywords=comedy&location=" + where + "&date=" + when + "&page_size=3", function(err, request, data){
+request("http://api.eventful.com/json/events/search?app_key=" + apikey + "&keywords=all&location=" + where + "&date=" + when + "&page_size=50", function(err, request, data){
   var eventCount = JSON.parse(data).events
   var randomEvent = [];
   if(eventCount === null){
