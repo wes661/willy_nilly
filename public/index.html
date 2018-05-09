@@ -15,7 +15,7 @@
 <body>
 <header>
 <h1>{ Willy-Nilly }</h1>
-<p data-toggle="modal" data-target="#aboutModal">What is Willy-Nilly?</p>
+<p data-toggle="modal" data-target="#loginModal">What is Willy-Nilly?</p>
 </header>
 <!-- start of div for video background -->
 <div class="fullscreen-bg">
@@ -36,11 +36,11 @@
             <option value="Future">Future</option>
             <option value="All">All</option>
         </select>
-        <input type="button" class="findEvent" value="Submit" />
+        <input type="button" class="findEvent" data-toggle="modal" data-target="#eventModal" value="Submit" />
     </form>
 </div>
 
-<div id="view"></div>
+
 
 <!-- About Modal -->
 <div id="aboutModal" class="modal fade" role="dialog">
@@ -64,6 +64,79 @@
     </div>
 </div>
 
+<!-- Event Modal -->
+<div id="eventModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <p>Things to do!</p>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            <div id="view"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- login Modal -->
+<div id="loginModal" class="modal fade" role="dialog">
+<div class="cont">
+    <div class="loginForm sign-in">
+        <h2>Welcome back,</h2>
+        <label>
+            <span>Email</span>
+            <input class="loginInput" type="email" />
+        </label>
+        <label>
+            <span>Password</span>
+            <input class="loginInput" type="password" />
+        </label>
+        <p class="forgot-pass">Forgot password?</p>
+        <button type="button" class="submit">Sign In</button>
+        <button type="button" class="fb-btn">Connect with
+            <span>facebook</span>
+        </button>
+    </div>
+    <div class="sub-cont">
+        <div class="img">
+            <div class="img__text m--up">
+                <h2>New here?</h2>
+                <p>Sign up to experience Willy-Nilly!</p>
+            </div>
+            <div class="img__text m--in">
+                <h2>Already Registered?</h2>
+                <p>If you already has an account, just sign in.</p>
+            </div>
+            <div class="img__btn">
+                <span class="m--up">Sign Up</span>
+                <span class="m--in">Sign In</span>
+            </div>
+        </div>
+        <div class="form sign-up">
+            <h2>Time to do something random,</h2>
+            <label>
+                <span>Name</span>
+                <input class="loginInput" type="text" />
+            </label>
+            <label>
+                <span>Email</span>
+                <input class="loginInput" type="email" />
+            </label>
+            <label>
+                <span>Password</span>
+                <input class="loginInput" type="password" />
+            </label>
+            <button type="button" class="submit">Sign Up</button>
+            <button type="button" class="fb-btn">Join with
+                <span>facebook</span>
+            </button>
+        </div>
+    </div>
+</div>
+</div>
 
 <!-- JS Source -->
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
