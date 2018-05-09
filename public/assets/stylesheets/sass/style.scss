@@ -50,6 +50,14 @@ form {
     position: relative;
     min-width: 50px;
     border-radius: 0px 0px 3px 3px;
+    .date {
+            border: none;
+            font-size: 1rem;
+            background-color: white;
+            outline: $lightblue;
+            -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
+            margin-left: 10px;
+        }
 	input {
 		padding: .75rem;
         margin: 0 2px 0 -4px;
@@ -61,12 +69,6 @@ form {
 			&:focus {
                 outline: .10rem solid $lightblue;
             }    
-        }
-        &[type="date"] {
-            border: none;
-            font-size: 1rem;
-            background-color: white;
-            outline: $lightblue;   
         }
 		&[type="button"]{
             background: linear-gradient(lighten($lightblue, 5%), lighten($lightblue, 0%));
@@ -178,10 +180,10 @@ header {
         flex: 100%;
     
     }
-        .option-container {
+    .option-container {
     // display: none;
 	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
-    width: 20rem;
+    width: 21rem;
     margin-top: auto;
     top: 300px;
     position: absolute;
@@ -191,6 +193,7 @@ header {
 
 // ----- PHONE STYLES - SM 
 @media only screen and (min-width: 599px) {
+
     header {
         margin-top:180px;
         h1 {
