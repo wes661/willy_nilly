@@ -39,12 +39,13 @@ $diffRatio: ($contW - $imgW) / $contW;
 .cont {
   overflow: hidden;
   position: relative;
+  top: 100px;
   width: $contW;
   height: 550px;
   margin: 0 auto 100px;
   background: #fff;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
 }
-
 .loginForm {
   position: relative;
   width: $formW;
