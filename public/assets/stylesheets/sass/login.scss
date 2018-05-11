@@ -294,41 +294,11 @@ label {
     right: 5px;
   }
 }
-@media only screen and (min-width: 200px) {
-    header {
-        margin-top:190px;
-        h1 {
-            font-size: 3.5em;
-        }
-        p {
-        bottom: -30px;
-        left: 20px
-        }
-    }
-    .fullscreen-bg {
-        background: url('../../images/event.jpg') center center / cover no-repeat;
-        #background-vid {
-            display: none;
-        }
-    }
-    input {
-        padding: 1rem !important;
-        margin:0 !important;
-        flex: 100%;
-    
-    }
-    .option-container {
-    // display: none;
-	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
-    width: 21rem;
-    margin-top: auto;
-    top: 300px;
-    position: absolute;
-}	
 
-}
+
 // ----- PHONE STYLES - SM 
 @media only screen and (min-width: 599px) {
+
 }
 // ----- TABLET STYLES - MD 
 @media only screen and (min-width: 750px) {
