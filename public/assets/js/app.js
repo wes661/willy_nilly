@@ -6,8 +6,9 @@ $(document).ready(function () {
             $(".cta").css('cursor', 'default');
         }
         $("#location").focus();
-    });
+    }); 
 });
+
 
 document.querySelector('.img__btn').addEventListener('click', function () {
     document.querySelector('.cont').classList.toggle('s--signup');
@@ -16,3 +17,4 @@ document.querySelector('.img__btn').addEventListener('click', function () {
 $('.message a').click(function () {
     $('form').animate({ height: "toggle", opacity: "toggle" }, "slow");
 });
+
