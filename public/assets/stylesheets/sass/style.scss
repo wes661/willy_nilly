@@ -103,7 +103,13 @@ body {
 }     
 .hidden{
     display: none;
-}               
+}   
+#map {
+            height: 225px;
+			width: 100%;
+			background:white;
+		}
+            
 header {
     margin-top:100px;
     position: relative;
