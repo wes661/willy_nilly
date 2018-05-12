@@ -20,23 +20,17 @@
 
     <!-- Webpage login -->
     <div class="cont">
-        <form method="post" action="signin">
-            <div class="loginForm sign-in" style="padding-top: 100pxl"  >
+        <form method="post" autocomplete="false" action="signin" class="loginForm sign-in" style="padding-top: 100px">
                 <h2>Welcome back,</h2>
                 <label>
                     <span>Email</span>
-                    <input class="loginInput" type="email" name="email"/>
+                    <input class="loginInput inputBgOpaque" autocomplete="false" type="email" name="email"/>
                 </label>
                 <label>
                     <span>Password</span>
-                    <input class="loginInput" type="password" name="password"/>
+                    <input class="loginInput inputBgOpaque" autocomplete="new-password" type="password" name="password"/>
                 </label>
-                <p class="forgot-pass">Forgot password?</p>
-                <input type="submit" class="submit">Sign In</input>
-                <button type="button" class="fb-btn">Connect with
-                    <span>facebook</span>
-                </button>
-            </div>
+                <input type="submit" class="submit"></input>
         </form>
         <div class="sub-cont">
             <div class="img">
@@ -53,30 +47,25 @@
                     <span class="m--in">Sign In</span>
                 </div>
             </div>
-            <form action="/signup" method="post">
-                <div class="loginForm sign-up" style="padding-top: 20px;" >
+            <form action="/signup" class="loginForm sign-up " autocomplete="false" method="post" style="padding-top: 20px;">
                     <h2>Time to do something random,</h2>
                     <label>
                         <span>First Name</span>
-                        <input class="loginInput" type="text" name="firstname"/>
+                        <input class="loginInput inputBgOpaque" autocomplete="false" type="text" name="firstname"/>
                     </label>
                     <label>
                         <span>Last Name</span>
-                        <input class="loginInput" type="text" name="lastname"/>
+                        <input class="loginInput inputBgOpaque" autocomplete="false" type="text" name="lastname"/>
                     </label>
                     <label>
                         <span>Email</span>
-                        <input class="loginInput" type="email" name="email"/>
+                        <input class="loginInput inputBgOpaque" autocomplete="false" type="email" name="email"/>
                     </label>
                     <label>
                         <span>Password</span>
-                        <input class="loginInput" type="password"  name="password"/>
+                        <input class="loginInput inputBgOpaque" autocomplete="new-password" type="password"  name="password"/>
                     </label>
-                    <input type="submit" class="submit">Sign Up</button>
-                    <button type="button" class="fb-btn">Join with
-                        <span>facebook</span>
-                    </button>
-                </div>
+                    <input type="submit" class="submit"></button>
             </form>
         </div>
     </div>

@@ -12,8 +12,8 @@ $(document).ready(function () {
 
         e.preventDefault();
 
-        $(toggle).toggleClass('toggle--on')
-            .toggleClass('toggle--off')
+        $(toggle).toggleClass('toggle--food')
+            .toggleClass('toggle--events')
             .addClass('toggle--moving');
 
         setTimeout(function () {
@@ -25,5 +25,6 @@ $(document).ready(function () {
 document.querySelector('.img__btn').addEventListener('click', function () {
     document.querySelector('.cont').classList.toggle('s--signup');
 });
+
 
 

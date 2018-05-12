@@ -101,9 +101,9 @@ table {
   transform: translate3d(-640px, 0, 0);
 }
 
-.submit, .fb-btn {
+.submit {
   display: block;
-  margin: 0 auto;
+  margin: 50px 160px !important;
   width: 260px;
   height: 36px;
   border-radius: 30px;
@@ -262,6 +262,10 @@ label span {
   text-align: center;
 }
 
+.inputBgOpaque:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px white inset;
+}
+
 .forgot-pass {
   margin-top: 15px;
   text-align: center;
@@ -346,6 +350,12 @@ label span {
   }
 }
 
+@media only screen and (min-width: 599px) {
+  .fullscreen-bg #background-vid {
+    display: block;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -365,6 +375,10 @@ body {
   position: absolute;
 }
 
+.inputBgOpaque:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px white inset;
+}
+
 .cta {
   background: #3399CC;
   border-radius: 3px 3px 0px 0px;
@@ -379,7 +393,7 @@ body {
   width: 100%;
 }
 
-form {
+.searchForm {
   background: #CDB99C;
   display: flex;
   flex-flow: row;
@@ -390,34 +404,27 @@ form {
   border-radius: 0px 0px 3px 3px;
 }
 
-form .date {
+.searchForm .date {
   border: none;
   font-size: 1rem;
   background-color: white;
+  width: auto;
+  height: 3.3rem;
+  border-radius: 0 2px 0 0 !important;
   outline: #3399CC;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   margin-left: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
 }
 
-form input {
+.searchForm input {
   padding: .75rem;
   margin: 0 2px 0 -4px;
 }
 
-form input #location {
-  border: none;
-  font-size: 1rem;
-  outline: #3399CC;
-  border-radius: 0 2px 0 0;
-}
-
-form input #location:focus {
-  outline: 0.1rem solid #3399CC;
-}
-
-form input[type="button"] {
+.searchForm input[type="button"] {
   background: linear-gradient(#47a3d1, #3399cc);
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
   cursor: pointer;
   border-radius: 3px;
   color: white;
@@ -428,12 +435,21 @@ form input[type="button"] {
   padding: 0 4rem;
   transition: all .25s ease-in-out;
   position: absolute;
-  right: 25%;
-  top: 100px;
+  right: 10px;
+  top: 80px;
 }
 
-form input[type="button"]:hover {
+.searchForm input[type="button"]:hover {
   background: linear-gradient(#4ba5d2, #379bcd);
+}
+
+.searchForm #location {
+  border: none;
+  width: 326px !important;
+  font-size: 1rem;
+  outline: #3399CC;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
 }
 
 .hidden {
@@ -506,7 +522,7 @@ header p {
 }
 
 #aboutModal .modal-content .modal-body #cr {
-  font-size: .5em;
+  font-size: 1em;
 }
 
 #eventModal .modal-content .modal-header {
@@ -551,6 +567,78 @@ header p {
   font-size: .5em;
 }
 
+*, *:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.toggle {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 10px;
+  right: 150px;
+  width: 150px;
+  height: 50px;
+  color: white;
+  outline: 0;
+  text-decoration: none;
+  border-radius: 50px;
+  border: 2px solid #546E7A;
+  background-color: #263238;
+  transition: all 500ms;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
+}
+
+.toggle:active {
+  background-color: #1c2429;
+}
+
+.toggle:hover:not(.toggle--moving):after {
+  background-color: #455A64;
+}
+
+.toggle:after {
+  display: block;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  line-height: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: white;
+  background-color: #37474F;
+  border: 2px solid;
+  transition: all 500ms;
+}
+
+.toggle--food:after {
+  content: 'Food/Bars';
+  border-radius: 50px 5px 5px 50px;
+  color: #3399CC;
+}
+
+.toggle--events:after {
+  content: 'Events';
+  border-radius: 5px 50px 50px 5px;
+  transform: translate(100%, 0);
+  color: #CDB99C;
+}
+
+.toggle--moving {
+  background-color: #1c2429;
+}
+
+.toggle--moving:after {
+  color: transparent;
+  border-color: #435862;
+  background-color: #222c31;
+  transition: color 0s, transform 500ms, border-radius 500ms,           background-color 500ms;
+}
+
 @media only screen and (min-width: 200px) {
   header {
     margin-top: 190px;
@@ -579,6 +667,13 @@ header p {
     margin-top: auto;
     top: 300px;
     position: absolute;
+  }
+  .searchForm #location {
+    width: 190px !important;
+  }
+  .toggle {
+    width: 150px;
+    right: 90px;
   }
 }
 
@@ -614,6 +709,13 @@ header p {
     margin-top: auto;
     top: 300px;
     position: absolute;
+  }
+  .searchForm #location {
+    width: 330px !important;
+  }
+  .toggle {
+    width: 150px;
+    right: 150px;
   }
 }
 
