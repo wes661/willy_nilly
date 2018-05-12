@@ -4,7 +4,6 @@ var passport   = require('passport');
 var session    = require('express-session');
 var env = require('dotenv').load();
 var eventRoute = require('./routes/event-api-routes');
-var userRoute = require('./routes/user-api-routes');
 var placeRoute = require('./routes/place-api-routes');
 var exphbs = require('express-handlebars');
 var app = express();
@@ -37,7 +36,6 @@ app.use(passport.session()); // persistent login sessions
 app.use(express.static("public"));
 
 app.use('/', eventRoute);
-app.use('/', userRoute);
 app.use('/', placeRoute);
 
  //Sync Database
