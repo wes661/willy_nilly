@@ -21,7 +21,7 @@ app.set('view engine', '.hbs');
 var PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
-var models = require("./app/models");
+var models = require("./models");
 
 // Sets up the Express app to handle data parsing
 
@@ -36,12 +36,14 @@ app.use(passport.session()); // persistent login sessions
 // Static directory
 app.use(express.static("public"));
 
-// app.use('/', eventRoute);
-// app.use('/', userRoute);
-// app.use('/', placeRoute);
+app.use('/', eventRoute);
+app.use('/', userRoute);
+app.use('/', placeRoute);
 
  //Sync Database
- models.sequelize.sync().then(function() {
+ models.sequelize.sync(
+  //  {force: true}
+  ).then(function() {
   console.log('Nice! Database looks fine')
 }).catch(function(err) {
   console.log(err, "Something went wrong with the Database Update!")
@@ -51,7 +53,7 @@ app.use(express.static("public"));
 var authRoute = require('./routes/auth.js')(app,passport);
 
 //load passport strategies
-require('./config/passport/passport.js')(passport, models.user);
+require('./config/passport/passport.js')(passport, models.User);
 
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);

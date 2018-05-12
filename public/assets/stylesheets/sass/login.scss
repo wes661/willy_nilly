@@ -37,7 +37,7 @@ $diffRatio: ($contW - $imgW) / $contW;
 .cont {
   overflow: hidden;
   position: relative;
-  top: 100px;
+  top: 75px;
   width: $contW;
   height: 560px;
   margin: 0 auto 100px;
@@ -319,6 +319,7 @@ label {
     }
     
 }	
+
 
 // ----- PHONE STYLES - SM 
 @media only screen and (min-width: 599px) {
