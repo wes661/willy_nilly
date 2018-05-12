@@ -29,6 +29,9 @@ body {
     position: absolute;
 
 }	
+.inputBgOpaque:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px white inset;
+}
 .cta {
     background: $lightblue;
     border-radius: 3px 3px 0px 0px;
@@ -40,40 +43,38 @@ body {
 	padding: 1.75rem 1rem;
 	text-align: center;
 	text-decoration: none;
-	width: 100%;
+    width: 100%;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.25);
 }
-form {
+.searchForm {
 	background: $sand;
 	display: flex;
 	flex-flow: row;
 	padding: 1rem;
     margin: 0;
     position: relative;
+    top:1px;
     min-width: 50px;
     border-radius: 0px 0px 3px 3px;
+
     .date {
             border: none;
             font-size: 1rem;
             background-color: white;
+            width: auto;
+            height: 3.3rem;
+            border-radius: 0 2px 0 0!important;
             outline: $lightblue;
             -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
             margin-left: 10px;
+            box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 5px 5px rgba(0, 0, 0, 0.418); 
         }
 	input {
 		padding: .75rem;
         margin: 0 2px 0 -4px;
-		#location {
-			border: none;
-			font-size: 1rem;
-            outline: $lightblue; 
-            border-radius: 0 2px 0 0;
-			&:focus {
-                outline: .10rem solid $lightblue;
-            }    
-        }
 		&[type="button"]{
             background: linear-gradient(lighten($lightblue, 5%), lighten($lightblue, 0%));
-            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
+            box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
             cursor: pointer;
             border-radius: 3px;
 			color: white;
@@ -84,13 +85,21 @@ form {
 			padding: 0 4rem;
             transition: all .25s ease-in-out;
             position: absolute;
-            right: 25%;
-            top: 100px;
+            right: 10px;
+            top: 80px;
 			&:hover{
                 background: linear-gradient(lighten($lightblue, 6%), lighten($lightblue, 1%))
             }    
         }        
-    }            
+    } 
+    #location {
+            border: none;
+            width: 326px!important;
+			font-size: 1rem;
+            outline: $lightblue; 
+            border-radius: 10px;  
+            box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 5px 5px rgba(0, 0, 0, 0.418); 
+        }           
 }     
 .hidden{
     display: none;
@@ -104,19 +113,29 @@ header {
         margin: auto;
         width: 100%;
         padding: 10px;
-        text-shadow: 2px 2px 8px black;
+        text-shadow: 4px 4px 16px black;
     }
     p {
         cursor: pointer;
-        font-size: 1em;
-        text-shadow: 2px 2px 8px black;
+        font-size: 1.2em;
+        text-shadow: 4px 4px 16px black;
         color: $lightblue;
         position: absolute;
         bottom: -15px;
         left: 100px
     }
+    a{
+        cursor: pointer;
+        font-size: 1.2em;
+        text-shadow: 4px 4px 16px black;
+        color: $lightblue;
+        position: absolute;
+        top: 0px;
+        right: 20px;
+    }
 }
-.fullscreen-bg {    
+
+.fullscreen-bg {   
     position: fixed;
     top: 0;
     right: 0;
@@ -130,6 +149,16 @@ header {
         left: 0;
         width: 100%;
         height: 100%;
+    }
+    .overlay{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    background: black;
+    opacity: 0.5;
     }
 }
 #aboutModal {
@@ -151,7 +180,7 @@ header {
             .modal-body {
                 background-color: $sand;
                 #cr {
-                    font-size: .5em;
+                    font-size: 1em;
                 }
             }
         }
@@ -198,6 +227,80 @@ header {
             }
         }
 }
+*, *:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.toggle {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 10px;
+  right: 150px;
+  width: 150px;
+  height: 50px;
+  color: white;
+  outline: 0;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid #546E7A;
+  background-color: #263238;
+  transition: all 500ms;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.25), 0 5px 5px rgba(0, 0, 0, 0.418); 
+  &:active {
+    background-color: darken(#263238, 5%);
+  }
+  &:hover:not(.toggle--moving) {
+    &:after {
+      background-color: #455A64;
+    }
+  }
+  &:after {
+    display: block;
+    position: absolute;
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: white;
+    background-color: #37474F;
+    border: 2px solid;
+    transition: all 500ms; 
+  }
+}
+.toggle--food {
+  &:after {
+    content: 'Food/Bars';
+    border-radius: 5px;
+    color: $lightblue;
+  }
+}
+.toggle--events {
+  &:after {
+    content: 'Events';
+    border-radius:5px;
+    transform: translate(100%, 0);
+    color:$sand;
+  }
+}
+.toggle--moving {
+  background-color: darken(#263238, 5%);
+  &:after {
+    color: transparent;
+    border-color: darken(#546E7A, 8%);
+    background-color: darken(#37474F, 10%);
+    transition: color 0s,
+                transform 500ms,
+                border-radius 500ms,          
+                background-color 500ms;
+  }
+}
+
 
 // ----- PHONE STYLES - Smaller 
 @media only screen and (min-width: 200px) {
@@ -231,7 +334,15 @@ header {
     top: 300px;
     position: absolute;
 }	
-
+    .searchForm {
+        #location {
+            width: 190px!important;
+        }
+    }
+    .toggle {
+        width: 150px;
+        right: 90px;
+    }
 }
 
 // ----- PHONE STYLES - SM 
@@ -271,6 +382,16 @@ header {
     top: 300px;
     position: absolute;
     }	
+    .searchForm {
+        #location {
+            width: 330px!important;
+        }
+    }
+        
+    .toggle {
+        width: 150px;
+        right: 150px;
+    }
 }
 // ----- TABLET STYLES - MD 
 @media only screen and (min-width: 600px) {

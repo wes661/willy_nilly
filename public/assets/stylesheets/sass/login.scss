@@ -68,9 +68,9 @@ $diffRatio: ($contW - $imgW) / $contW;
   }
 }
 
-.submit, .fb-btn {
+.submit {
   display: block;
-  margin: 0 auto;
+  margin: 50px 160px !important;
   width: $inputW;
   height: $btnH;
   border-radius: 30px;
@@ -234,6 +234,10 @@ label {
   font-size: 16px;
   border-bottom: 1px solid rgba(0,0,0,0.4);
   text-align: center;
+
+}
+.inputBgOpaque:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 100px white inset;
 }
 
 .forgot-pass {
@@ -323,6 +327,11 @@ label {
 
 // ----- PHONE STYLES - SM 
 @media only screen and (min-width: 599px) {
+    .fullscreen-bg {
+        #background-vid {
+            display: block;
+        }
+    }
 
 }
 // ----- TABLET STYLES - MD 
