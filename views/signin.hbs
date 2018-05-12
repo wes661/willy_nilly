@@ -1,0 +1,82 @@
+{{!-- 
+    <form id="signin" name="signin" method="post" action="signin">
+        <label for="email">Email Address</label>
+        <input class="text" name="email" type="text" />
+        <label for="password">Password</label>
+        <input name="password" type="password" />
+        <input class="btn" type="submit" value="Sign In" />
+    </form> --}}
+ 
+
+
+
+<link rel="stylesheet" href="/assets/stylesheets/css/login.css">
+    <!-- start of div for video background -->
+    <div class="fullscreen-bg">
+        <video autoplay muted loop id="background-vid">
+            <source src="assets/images/background-vid.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Webpage login -->
+    <div class="cont">
+        <form method="post" action="signin">
+            <div class="loginForm sign-in" style="padding-top: 100pxl"  >
+                <h2>Welcome back,</h2>
+                <label>
+                    <span>Email</span>
+                    <input class="loginInput" type="email" name="email"/>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input class="loginInput" type="password" name="password"/>
+                </label>
+                <p class="forgot-pass">Forgot password?</p>
+                <input type="submit" class="submit">Sign In</input>
+                <button type="button" class="fb-btn">Connect with
+                    <span>facebook</span>
+                </button>
+            </div>
+        </form>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+                    <h2>New here?</h2>
+                    <p>Sign up to experience Willy-Nilly!</p>
+                </div>
+                <div class="img__text m--in">
+                    <h2>Already Registered?</h2>
+                    <p>If you already has an account, just sign in.</p>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <form action="/signup" method="post">
+                <div class="loginForm sign-up" style="padding-top: 20px;" >
+                    <h2>Time to do something random,</h2>
+                    <label>
+                        <span>First Name</span>
+                        <input class="loginInput" type="text" name="firstname"/>
+                    </label>
+                    <label>
+                        <span>Last Name</span>
+                        <input class="loginInput" type="text" name="lastname"/>
+                    </label>
+                    <label>
+                        <span>Email</span>
+                        <input class="loginInput" type="email" name="email"/>
+                    </label>
+                    <label>
+                        <span>Password</span>
+                        <input class="loginInput" type="password"  name="password"/>
+                    </label>
+                    <input type="submit" class="submit">Sign Up</button>
+                    <button type="button" class="fb-btn">Join with
+                        <span>facebook</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
