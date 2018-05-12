@@ -11,8 +11,8 @@
 <!-- start of div for submit button -->
 <div class="option-container">
     <div class="cta">Do Something Fun!</div>
-    <form class="form hidden">
-        <input type="search" id="location" name="location" placeholder="Where are you located?"/>
+    <form class="searchForm hidden">
+        <input type="search" id="location" class="inputBgOpaque" name="location" placeholder="Where are you located?"/>
         <select class="date">
             <option value="Today">Today</option>
             <option value="This Week">This Week</option>
@@ -22,6 +22,7 @@
             <option value="All">All</option>
         </select>
         <input type="button" class="findEvent" data-toggle="modal" data-target="#eventModal" value="Submit" />
+        <a href="#" class="toggle toggle--food"></a>
     </form>
 </div>
 
@@ -38,10 +39,11 @@
             </div>
             <div class="modal-body">
                 <p>Willy-Nilly is a web app brought to life by the collaborative minds of Corey Richard, Wesley Hanson, Avram Adam and Brianna Herreras. It seeks to give you a more spontanous option to exploring a city. 
-                <br>
+                <hr>
                 Set your city and date you want to be spontanous and we will return random events happening in that time frame giving you the oppertunity to experience Willy-Nilly!  </p>
             
-            
+                <hr>
+                
                 <p id="cr" class="text-muted">Copyright 2018, Corey Richard, Wesley Hanson, Avram Adam, Brianna Herreras.</p>
             </div>
         </div>
@@ -66,9 +68,3 @@
     </div>
 </div>
 
-<!-- JS Source -->
-<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-    crossorigin="anonymous"></script>
-<script src="assets/js/app.js"></script>
-<script src="assets/js/event-api.js"></script>
