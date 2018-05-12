@@ -467,17 +467,27 @@ header h1 {
   margin: auto;
   width: 100%;
   padding: 10px;
-  text-shadow: 2px 2px 8px black;
+  text-shadow: 4px 4px 16px black;
 }
 
 header p {
   cursor: pointer;
-  font-size: 1em;
-  text-shadow: 2px 2px 8px black;
+  font-size: 1.2em;
+  text-shadow: 4px 4px 16px black;
   color: #3399CC;
   position: absolute;
   bottom: -15px;
   left: 100px;
+}
+
+header a {
+  cursor: pointer;
+  font-size: 1.2em;
+  text-shadow: 4px 4px 16px black;
+  color: #3399CC;
+  position: absolute;
+  top: 0px;
+  right: 20px;
 }
 
 .fullscreen-bg {
@@ -496,6 +506,17 @@ header p {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+.fullscreen-bg .overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+  background: black;
+  opacity: 0.5;
 }
 
 #aboutModal {
