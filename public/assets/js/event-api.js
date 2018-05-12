@@ -42,7 +42,7 @@ $(".findEvent").click(function(){
                 venueAdress +
                 "<br>" +
                 "<br>" +
-                "<br>");
+                "<hr>");
             }
         }    
     });
