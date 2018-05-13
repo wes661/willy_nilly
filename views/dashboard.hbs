@@ -16,9 +16,9 @@
 <!-- start of div for submit button -->
 
 <div class="option-container">
-    <div class="cta">Do Something Fun!</div>
-    <form class="searchForm hidden">
-        <input type="search" id="location" class="inputBgOpaque" name="location" placeholder="Where are you located?"/>
+    <div class="cta inputBgOpaque">Do Something Fun!</div>
+    <form class="searchForm hidden inputBgOpaque">
+        <input type="search" id="location" class="inputBgOpaque eventLocation" name="location" value="Tucson, AZ"/>
         <select class="date">
             <option value="Today">Today</option>
             <option value="This Week">This Week</option>
@@ -26,12 +26,11 @@
             <option value="Next Month">Next Month</option>
             <option value="Future">Future</option>
         </select>
-        <input type="button" class="findEvent" data-toggle="modal" data-target="#eventModal" value="Submit" />
-        <a href="#" class="toggle toggle--food"></a>
+        <input type="button" class="findEvent"  value="Submit" />
+        <div id="loader"></div>
+        <a href="#" class="toggle toggle--events"></a>
     </form>
 </div>
-
-
 
 <!-- About Modal -->
 <div id="aboutModal" class="modal fade" role="dialog">
@@ -62,12 +61,15 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <p>Things to do!</p>
+                <h2>Try one of these out!</h2>
+                <br>
+                <p id="other">...or don't, I'm not your boss</p>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <p data-toggle="modal" data-target="#mapsModal">Get Map</p>
-            <div id="view"></div>
+            <div id="view">
+            <div id="events">
+            </div>
             </div>
         </div>
     </div>
@@ -85,3 +87,6 @@
         </div>
     </div>
 </div>
+
+{{!-- loader Div --}}
+
