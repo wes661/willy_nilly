@@ -21,15 +21,15 @@
 
     <!-- Webpage login -->
     <div class="cont">
-        <form method="post" autocomplete="false" action="signin" class="loginForm sign-in" style="padding-top: 100px">
+        <form method="post" autocomplete="false" action="signin" name="login" onsubmit="return validateLogin()" class="loginForm sign-in" style="padding-top: 100px">
                 <h2>Welcome back,</h2>
                 <label>
-                    <span>Email</span>
-                    <input class="loginInput inputBgOpaque" autocomplete="false" type="email" name="email"/>
+                    <span class="loginEmail1">Email</span>
+                    <input class="loginInput inputBgOpaque loginEmail"  autocomplete="false" type="email" name="email"/>
                 </label>
                 <label>
-                    <span>Password</span>
-                    <input class="loginInput inputBgOpaque" autocomplete="new-password" type="password" name="password"/>
+                    <span class="loginPassword1">Password</span>
+                    <input class="loginInput inputBgOpaque loginPassword"  autocomplete="new-password" type="password" name="password"/>
                 </label>
                 <input type="submit" class="submit"></input>
         </form>
@@ -48,23 +48,23 @@
                     <span class="m--in">Sign In</span>
                 </div>
             </div>
-            <form action="/signup" class="loginForm sign-up " autocomplete="false" method="post" style="padding-top: 20px;">
+            <form action="/signup" class="loginForm sign-up " autocomplete="false" name="signUp" onsubmit="return validateSignUp()" method="post" style="padding-top: 20px;">
                     <h2>Time to do something random,</h2>
                     <label>
-                        <span>First Name</span>
-                        <input class="loginInput inputBgOpaque" autocomplete="false" type="text" name="firstname"/>
+                        <span class="firstName1">First Name</span>
+                        <input class="loginInput inputBgOpaque firstName" autocomplete="false" type="text" name="firstname"/>
                     </label>
                     <label>
-                        <span>Last Name</span>
-                        <input class="loginInput inputBgOpaque" autocomplete="false" type="text" name="lastname"/>
+                        <span class="lastName1">Last Name</span>
+                        <input class="loginInput inputBgOpaque lastName" autocomplete="false" type="text" name="lastname"/>
                     </label>
                     <label>
-                        <span>Email</span>
-                        <input class="loginInput inputBgOpaque" autocomplete="false" type="email" name="email"/>
+                        <span class="signupEmail1">Email</span>
+                        <input class="loginInput inputBgOpaque signupEmail" autocomplete="false" type="email" name="email"/>
                     </label>
                     <label>
-                        <span>Password</span>
-                        <input class="loginInput inputBgOpaque" autocomplete="new-password" type="password"  name="password"/>
+                        <span class="signupPassword1">Password</span>
+                        <input class="loginInput inputBgOpaque signupPassword" autocomplete="new-password" type="password"  name="password"/>
                     </label>
                     <input type="submit" class="submit"></button>
             </form>

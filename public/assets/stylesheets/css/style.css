@@ -264,6 +264,7 @@ label span {
 
 .inputBgOpaque:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 100px white inset;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
 }
 
 .forgot-pass {
@@ -274,6 +275,7 @@ label span {
 }
 
 .submit {
+  line-height: 0px;
   margin-top: 40px;
   margin-bottom: 20px;
   background: #d4af7a;
@@ -379,6 +381,14 @@ body {
   -webkit-box-shadow: 0 0 0 100px white inset;
 }
 
+#other {
+  font-size: 0.5em !important;
+  color: #212121;
+  position: relative;
+  left: 0;
+  top: 10%;
+}
+
 .cta {
   background: #3399CC;
   border-radius: 3px 3px 0px 0px;
@@ -392,6 +402,10 @@ body {
   text-decoration: none;
   width: 100%;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.inputBgOpaque:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 100px white inset !important;
 }
 
 .searchForm {
@@ -445,7 +459,7 @@ body {
   background: linear-gradient(#4ba5d2, #379bcd);
 }
 
-.searchForm #location {
+.searchForm .eventLocation {
   border: none;
   width: 326px !important;
   font-size: 1rem;
@@ -454,8 +468,63 @@ body {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
 }
 
+.searchForm .foodLocation {
+  border: none;
+  width: 100% !important;
+  font-size: 1rem;
+  outline: #3399CC;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
+}
+
 .hidden {
   display: none;
+}
+
+#loader {
+  position: absolute;
+  left: 55%;
+  top: 50%;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  margin: -75px 0 0 -75px;
+  border: 17px solid #263238;
+  border-radius: 50%;
+  border-top: 17px solid #3498db;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#map {
+  height: 225px;
+  width: 100%;
+  background: white;
 }
 
 header {
@@ -662,6 +731,20 @@ header a {
   transition: color 0s, transform 500ms, border-radius 500ms,           background-color 500ms;
 }
 
+.eventTitle {
+  font-size: 1em;
+  margin: auto;
+  width: 100%;
+}
+
+.views {
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.418);
+  margin: 10px !important;
+  padding: 5px;
+}
+
 @media only screen and (min-width: 200px) {
   header {
     margin-top: 190px;
@@ -691,7 +774,7 @@ header a {
     top: 300px;
     position: absolute;
   }
-  .searchForm #location {
+  .searchForm .eventLocation {
     width: 190px !important;
   }
   .toggle {
@@ -733,7 +816,7 @@ header a {
     top: 300px;
     position: absolute;
   }
-  .searchForm #location {
+  .searchForm .eventLocation {
     width: 330px !important;
   }
   .toggle {
@@ -744,7 +827,7 @@ header a {
 
 @media only screen and (min-width: 600px) {
   header {
-    margin-top: 150px;
+    margin-top: 200px;
   }
   header h1 {
     font-size: 6em;
@@ -764,14 +847,14 @@ header a {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
     width: 30rem;
     margin-top: auto;
-    top: 300px;
+    top: 350px;
     position: absolute;
   }
 }
 
 @media only screen and (min-width: 900px) {
   header {
-    margin-top: 100px;
+    margin-top: 150px;
   }
   header h1 {
     color: #3399CC;
@@ -789,14 +872,14 @@ header a {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
     width: 30rem;
     margin-top: auto;
-    top: 300px;
+    top: 350px;
     position: absolute;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   header {
-    margin-top: 100px;
+    margin-top: 150px;
   }
   header h1 {
     color: #3399CC;
@@ -810,7 +893,7 @@ header a {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.418);
     width: 30rem;
     margin-top: auto;
-    top: 300px;
+    top: 350px;
     position: absolute;
   }
 }
