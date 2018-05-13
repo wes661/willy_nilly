@@ -1,16 +1,17 @@
 var db = require("../models");
+require("dotenv").config();
 var router = require('express').Router();
 var bodyParser = require("body-parser");
 var request = require('request');
-
+var keys = require("../keys.js"); 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
+var eventApi = (keys.eventful);
 
 router.get('/api/events', function(req, res, next){
   var where = req.query.where;
   var when = req.query.when;
-  var apikey = 'sKt9rvK6F3HzJdxb';
-  request("http://api.eventful.com/json/events/search?app_key=" + apikey + "&keywords=all&location=" + where + "&date=" + when + "&page_size=50", function(err, request, data){
+  request("http://api.eventful.com/json/events/search?app_key=" + eventApi.key + "&keywords=all&location=" + where + "&date=" + when + "&page_size=50", function(err, request, data){
     var eventCount = JSON.parse(data).events
     var randomEvent = [];
     if(eventCount === null){
