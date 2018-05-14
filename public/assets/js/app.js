@@ -41,6 +41,9 @@ $(document).ready(function () {
             $('#eventModal').modal('show');
         }, 3000);
     })
+    $(".close").click(function () {
+        $('#mapsModal').modal('hide');
+    });
 });
 
 // onclick for the login switch to sign up //
@@ -106,6 +109,8 @@ function validateSignUp() {
         $(".signupPassword").css({ "border-bottom": "1px solid #000000" });
     }
 }
+
+
 // Start of Google Maps //
 var map;
 
@@ -118,6 +123,7 @@ function initMap() {
 document.querySelector('#mapsModal').addEventListener('click', function () {
     initMap();
 });
+
 
 
 

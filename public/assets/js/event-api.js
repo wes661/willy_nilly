@@ -1,6 +1,5 @@
 
-  
-   
+
 
 $(".findEvent").click(function(){
     if($(".toggle").hasClass("toggle--events")){
@@ -12,13 +11,15 @@ $(".findEvent").click(function(){
         $("#view").empty();
         $.get("/api/events", searchTerms, function(data){
             console.log(data);
+            var mapsTitle;
             if(data.length === 0){
                 $("#view").html("No results found")
             }else{
                 for(var x = 0; x < data.length; x++){
                     var title = (data[x].title);
+                    
                     var image; 
-                    var map = "<a href=# data-toggle=modal data-target=#mapsModal>Get Map</a>";
+                    var map = "<a href=# data-toggle=modal class=mapsLink data-target=#mapsModal>Get Map</a>";
                     var sTime = convert(mTime);
                     var mTime = (data[x].start_time);
                     var venue = (data[x].venue_name);
@@ -28,15 +29,18 @@ $(".findEvent").click(function(){
                     function convert(input) {
                         return moment(input).format('dddd, MMMM Do YYYY @ h:mm A');
                     }
-                    eventButton.append("<h3>" + title + "</h3>" + "<br>");
-                    eventButton.append("<br>" + sTime + "<br>" + venue + "<br>" + venueAdress + "<br>" + "<br>");
+                    eventButton.append("<h1>" + title + "</h1>");
+                    eventButton.append("<br>" + sTime + "<br>" + venue + "<br>" + venueAdress + "<br>");
                     eventButton.append("<hr>")
                     eventButton.append(map);
                     
+                    
 
-                   $ ("#view").append(eventButton);
+                   $("#view").append(eventButton);
                 }
-            }    
+               
+            }  
+            
         });
     }    
 
