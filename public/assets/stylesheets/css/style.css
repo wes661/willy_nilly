@@ -522,8 +522,9 @@ input:-webkit-autofill {
 }
 
 #map {
-  height: 225px;
+  height: 800px;
   width: 100%;
+  padding: 20px;
   background: white;
 }
 
@@ -638,11 +639,17 @@ header a {
   font-size: .5em;
 }
 
-#loginModal .modal-content .modal-header {
+#mapsModal {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+}
+
+#mapsModal .modal-content .modal-header {
   background-color: #3399CC;
 }
 
-#loginModal .modal-content .modal-header p {
+#mapsModal .modal-content .modal-header p {
   color: black;
   font-size: 2em;
   margin: auto;
@@ -651,12 +658,12 @@ header a {
   text-shadow: 2px 2px 8px #EEEEEE;
 }
 
-#loginModal .modal-content .modal-body {
+#mapsModal .modal-content .modal-body {
   background-color: #CDB99C;
 }
 
-#loginModal .modal-content .modal-body #cr {
-  font-size: .5em;
+#mapsModal .modal-content .modal-body #cr {
+  font-size: 1em;
 }
 
 *, *:before,

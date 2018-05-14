@@ -1,6 +1,3 @@
-
-
-
 exports.google = {
     key: process.env.googleKey
 }
