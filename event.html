@@ -1,129 +1,95 @@
 <html>
 
-    Javascript Sample page <br>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script type="text/javascript" src="http://api.eventful.com/js/api"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
+Javascript Sample page
+<br>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="text/javascript" src="http://api.eventful.com/js/api"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
 
 
 
 
 
 
-  <body>
+<body>
 
-    Run Sample api searches <br><br>
+  Run Sample api searches
+  <br>
+  <br>
 
-    <form>
-      <div class="form-group">
-        <label for="formGroupExampleInput">What</label>
-        <input type="text" class="form-control" id="what" placeholder="Example input">
+  <form>
+    <div class="form-group">
+      <label for="formGroupExampleInput">What</label>
+      <input type="text" class="form-control" id="what" placeholder="Example input">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Where</label>
+      <input type="text" class="form-control" id="where" placeholder="Another input">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">When ("Future", "This Weekend", "Friday", "Next month"</label>
+      <input type="text" class="form-control" id="when" placeholder="Another input">
+    </div>
+    <button type="button" class="btn btn-info search">Search</button>
+  </form>
+  <br>
+  <center>
+    <div class="col-md-12">
+      <h1>Upcoming Events!</h1>
+      <div id="view">
+        <br>
       </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">Where</label>
-        <input type="text" class="form-control" id="where" placeholder="Another input">
-      </div>
-      <div class="form-group">
-        <label for="formGroupExampleInput2">When ("Future", "This Weekend", "Friday", "Next month"</label>
-        <input type="text" class="form-control" id="when" placeholder="Another input">
-      </div>
-      <button type="button" class="btn btn-info search">Search</button>
-    </form>
-    <br>
-    <center>
-      <div class="col-md-12">
-        <h1>Upcoming Events!</h1>
-        <div id="view">
-          <br>
-        </div>
-      </div>  
-    </center>   
+    </div>
+  </center>
 
 
 
-<!-- <input type="button" onclick="show_alert()" value="Query #1 " /> <br>
-
+  <!-- <input type="button" onclick="show_alert()" value="Query #1 " /> <br>
 <input type="button" onclick="show_alert2()" value="Query #2 " /> <br>
  -->
 
 
-<script type="text/javascript">
-
-
-
-function show_alert()
-
-{
-
-  var oArgs = {
-
-            app_key:"sKt9rvK6F3HzJdxb",
-
-            id: "20218701",
-
-            page_size: 25 ,
-
-  };
-
-  EVDB.API.call("/events/get", oArgs, function(oData) {
-
-    console.log(oData.event);
-
-      // Note: this relies on the custom toString() methods below
-
-    });
-
-}
-
-
-
-
-
-
-
-
-$(".search").on("click", function(event){
-  console.log("running");
-
-  $("#view").empty();
-
-  var oArgs = {
-
-      app_key: "sKt9rvK6F3HzJdxb",
-
-      what: $("#what").val().trim(),
-
-      where: $("#where").val().trim(),
-
-      when: $("#when").val().trim(),
-
-      page_size: 50,
-
-      sort_order: "popularity",
-
-   };
-
-   $.ajax("/api/events", oArgs, function(oData) {
-      console.log(oData);
-
-
-        var eventList =  oData.events.event
+  <script type="text/javascript">
+    function show_alert() {
+      var oArgs = {
+        app_key: "sKt9rvK6F3HzJdxb",
+        id: "20218701",
+        page_size: 25,
+      };
+      EVDB.API.call("/events/get", oArgs, function (oData) {
+        console.log(oData.event);
+        // Note: this relies on the custom toString() methods below
+      });
+    }
+    $(".search").on("click", function (event) {
+      console.log("running");
+      $("#view").empty();
+      var oArgs = {
+        app_key: "sKt9rvK6F3HzJdxb",
+        what: $("#what").val().trim(),
+        where: $("#where").val().trim(),
+        when: $("#when").val().trim(),
+        page_size: 50,
+        sort_order: "popularity",
+      };
+      $.ajax("/api/events", oArgs, function (oData) {
+        console.log(oData);
+        var eventList = oData.events.event
         var randomEvent = [];
         var events;
-        for(var i = 0; i < 5; i++ ){
-          var num = Math.floor(Math.random()*oData.events.event.length);
+        for (var i = 0; i < 5; i++) {
+          var num = Math.floor(Math.random() * oData.events.event.length);
           console.log(num);
           events = eventList[num];
           randomEvent.push(events);
         }
-
-        for(var x = 0; x < randomEvent.length; x++){
+        for (var x = 0; x < randomEvent.length; x++) {
           var title = (randomEvent[x].title);
-          var image; 
-          if(randomEvent[x].image){
+          var image;
+          if (randomEvent[x].image) {
             image = (randomEvent[x].image.thumb.url);
-          }else{
+          } else {
             image = "http://via.placeholder.com/48x48"
           }
           var mTime = (randomEvent[x].start_time);
@@ -133,47 +99,34 @@ $(".search").on("click", function(event){
           function convert(input) {
             return moment(input).format('dddd, MMMM Do YYYY @ h:mm A');
           }
-
           var sTime = convert(mTime);
-
-
           $("#view").append("<h3>" + title + "</h3>" + "<br>");
-
           var imageHTML = $('<img>');
           $(imageHTML).attr("src", image);
           $("#view").append(imageHTML);
           $("#view").append("<br>" +
-          sTime +
-          "<br>" +
-          venue +
-          "<br>" +
-          venueAdress +
-          "<br>" +
-          "<br>" +
-          "<br>");
-          
-
+            sTime +
+            "<br>" +
+            venue +
+            "<br>" +
+            venueAdress +
+            "<br>" +
+            "<br>" +
+            "<br>");
 
           // $("#image").attr("src", image);
         }
-        
-       
-       
-       
-      //  var oData = oData.events.event[Math.floor(Math.random()*oData.events.event.length)];
-      //  console.log(oData);
-
-      // Note: this relies on the custom toString() methods below
-
-    });
-
-   })
 
 
 
-</script>
+
+        //  var oData = oData.events.event[Math.floor(Math.random()*oData.events.event.length)];
+        //  console.log(oData);
+        // Note: this relies on the custom toString() methods below
+      });
+    })
+  </script>
 
 </body>
 
 </html>
-

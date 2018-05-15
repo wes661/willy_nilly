@@ -1,24 +1,24 @@
 {
-    "development": {
-      "username": "root",
-      "password": "root",
-      "database": "willy_nilly",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
-    },
-    "test": {
-      "username": "root",
-      "password": null,
-      "database": "database_test",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
-    },
-    "production": {
-      "username": "root",
-      "password": null,
-      "database": "database_production",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
-    }
+  "development": {
+    "username": "root",
+    "password": "root",
+    "database": "willy_nilly",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "username": "oxv341wl0me9qj8s",
+    "password": "dr2ux2f5jbmtyf4t",
+    "database": "e41qt5lxqjdk4kgr",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
-  
+}
