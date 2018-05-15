@@ -5,6 +5,7 @@ var session    = require('express-session');
 var env = require('dotenv').load();
 var eventRoute = require('./routes/event-api-routes');
 var placeRoute = require('./routes/place-api-routes');
+var mapRoute = require('./routes/map-api-routes');
 var exphbs = require('express-handlebars');
 var app = express();
 
@@ -37,6 +38,7 @@ app.use(express.static("public"));
 
 app.use('/', eventRoute);
 app.use('/', placeRoute);
+app.use('/', mapRoute);
 
  //Sync Database
  models.sequelize.sync(
