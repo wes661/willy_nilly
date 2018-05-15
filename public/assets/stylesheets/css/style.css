@@ -752,6 +752,20 @@ header a {
   padding: 5px;
 }
 
+.error {
+  text-align: center;
+}
+
+.error2 {
+  color: #CDB99C;
+  padding: 20px;
+}
+
+.errorBtn {
+  position: relative;
+  right: 10px !important;
+}
+
 @media only screen and (min-width: 200px) {
   header {
     margin-top: 190px;
