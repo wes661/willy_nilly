@@ -18,7 +18,7 @@ $(".findEvent").click(function(){
                    var address = data[x].vicinity;
                     var map = "<a href=# data-toggle=modal data-target=#mapsModal>Get Map</a>";
                     var eventButton = $("<div class=views>");
-                    eventButton.append("<h3>" + name + "</h3>" + "<br>" + address + "<br>");
+                    eventButton.append("<h3>" + name + "</h3>" + "<br>" + "<button class=address mapsLink data-toggle=modal data-target=#mapsModal>" + address +"</button>" + "<br>");
                     eventButton.append("<hr>")
                     eventButton.append(map);
 
@@ -27,6 +27,41 @@ $(".findEvent").click(function(){
 
 
                 }
+                $(".address").click(function(){
+                    console.log(this);
+                    mapAddress.push(this);
+                    eventAddress = mapAddress[0].firstChild.data;
+                    console.log(eventAddress.toString());
+                    var addressQuery = {
+                        address : eventAddress
+                    }
+    
+                    $.get("/api/maps", addressQuery, function(data){
+                        var lat =(data.results[0].geometry.location.lat);
+                        var lng =(data.results[0].geometry.location.lng);
+    
+                        console.log(lat);
+                        console.log(lng);
+    
+                        var map;
+    
+                        function initMap() {
+                            center = { lat: lat, lng: lng },
+                            map = new google.maps.Map(document.getElementById('map'), {
+                                center: center,
+                                zoom: 15
+                            });
+                            var marker = new google.maps.Marker({
+                                position: center,
+                                map: map
+                            });
+                        }
+                        initMap();
+                        
+                    })
+                    mapAddress = [];
+                    eventAddress;
+                })
             }
         })
     }

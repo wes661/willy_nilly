@@ -15,7 +15,6 @@ router.get('/api/places', function(req, res, next){
 	
 
 		request("https://maps.googleapis.com/maps/api/geocode/json?address=" + city + "&key=" + googleApi.key, function(err, response, data){
-			console.log(googleApi.key);
 			var places = JSON.parse(data);
 			var lat = (places.results[0].geometry.location.lat);
 			var lng = (places.results[0].geometry.location.lng);
@@ -24,7 +23,7 @@ router.get('/api/places', function(req, res, next){
 			// var userInput = "bar";
 			
 		
-			request("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=5500&type=bar&key=" + googleApi.key, function (err, response, data) {
+			request("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&radius=20000&type=bar&key=" + googleApi.key, function (err, response, data) {
 			//JSON.parse(data).results[i].name
 			var placeList = JSON.parse(data).results;
 			var randomPlace = [];
