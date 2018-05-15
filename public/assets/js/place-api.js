@@ -16,11 +16,10 @@ $(".findEvent").click(function(){
                 for(var x = 0; x < data.length; x++){
                    var name = data[x].name;
                    var address = data[x].vicinity;
-                    var map = "<a href=# data-toggle=modal data-target=#mapsModal>Get Map</a>";
                     var eventButton = $("<div class=views>");
-                    eventButton.append("<h3>" + name + "</h3>" + "<br>" + "<button class=address mapsLink data-toggle=modal data-target=#mapsModal>" + address +"</button>" + "<br>");
-                    eventButton.append("<hr>")
-                    eventButton.append(map);
+                    eventButton.append("<br>" + "<h3>" + name + "</h3>" + "<hr>" + "<button class=address mapsLink data-toggle=modal data-target=#mapsModal>" + address +"</button>" + "<br>");
+                    
+                
 
 
                     $("#view").append(eventButton);
