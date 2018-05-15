@@ -372,7 +372,17 @@ header {
     margin: 10px!important;
     padding: 5px;
 }
-
+.error {
+   text-align: center;
+}
+.error2 {
+    color: $sand;
+    padding: 20px;
+}
+.errorBtn {
+    position: relative;
+    right: 10px !important;
+}
 
 // ----- PHONE STYLES - Smaller 
 @media only screen and (min-width: 200px) {
