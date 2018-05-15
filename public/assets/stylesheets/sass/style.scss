@@ -154,7 +154,7 @@ input:-webkit-autofill {
 }
 
 #map {
-            height: 800px;
+            height: 700px;
             width: 100%;
             padding: 20px;
 			background:white;
@@ -425,6 +425,12 @@ header {
         width: 150px;
         right: 90px;
     }
+}
+.address {
+    color: $lightblue;
+    font-size: 1em;
+    padding: 2px;
+    cursor: pointer;
 }
 
 // ----- PHONE STYLES - SM 

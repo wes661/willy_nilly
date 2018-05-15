@@ -20,10 +20,10 @@ $(".findEvent").click(function(){
                     var title = (data[x].title);
                     
                     var image; 
-                    // var map = "<a href=# data-toggle=modal class=mapsLink data-target=#mapsModal>Get Map</a>";
                     var sTime = convert(mTime);
                     var mTime = (data[x].start_time);
                     var venue = (data[x].venue_name);
+                    var url = (data[x].url);
                     var venueAddress = (data[x].venue_address);
                     var city = (data[x].city_name);
                     var state = (data[x].region_abbr);
@@ -32,10 +32,10 @@ $(".findEvent").click(function(){
                     function convert(input) {
                         return moment(input).format('dddd, MMMM Do YYYY @ h:mm A');
                     }
-                    eventButton.append("<h3>" + title + "</h3>" + "<br>");
-                    eventButton.append("<br>" + sTime + "<br>" + venue + "<br>" + "<button class=address mapsLink data-toggle=modal data-target=#mapsModal>" + venueAddress + "," + city + "," + state + "</button>" + "<br>" + "<br>");
-                    eventButton.append("<hr>")
-                    // eventButton.append(map);
+                    eventButton.append("<br>" + "<a href=" + url + " target=_blank>" + title + "</a>" + "<br>");
+                    eventButton.append("<br>" + sTime + "<br>" + venue + "<br>" + "<hr>" + "<button class=address mapsLink data-toggle=modal data-target=#mapsModal>" + venueAddress + "," + city + "," + state + "</button>" + "<br>" + "<br>");
+                  
+                    
                    
 
                    $ ("#view").append(eventButton);
